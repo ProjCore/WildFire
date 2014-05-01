@@ -1,5 +1,4 @@
-package controllers;
-
+package WildFire;
 
 import com.example.wildfire.R;
 import com.example.wildfire.R.id;
@@ -9,32 +8,58 @@ import com.example.wildfire.R.menu;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.content.Context;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.os.Build;
+import android.net.wifi.WifiManager;
 
-public class MainActivity extends Activity {
+public class WifiManagerController extends Activity {
 
+	   WifiManager mainWifiObj;
+	   WifiManagerService wifiReciever;
+	   ListView list;
+	   String wifis[];
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_wifi_manager);
 
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
+	      list = (ListView)findViewById(R.id.listView1);
+	      //Context WIFI_SERVICE might be the wrong way to do this
+	      mainWifiObj = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+	      wifiReciever = new WifiManagerService();
+	      mainWifiObj.startScan();
 	}
+	
+	   protected void onPause() {
+		      unregisterReceiver(wifiReciever);
+		      super.onPause();
+		   }
+	   
+	   protected void onResume() {
+		      registerReceiver(wifiReciever, new IntentFilter(
+		      WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
+		      super.onResume();
+		   }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.wifi_manager, menu);
 		return true;
 	}
 
@@ -61,8 +86,8 @@ public class MainActivity extends Activity {
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_main, container,
-					false);
+			View rootView = inflater.inflate(R.layout.fragment_wifi_manager,
+					container, false);
 			return rootView;
 		}
 	}

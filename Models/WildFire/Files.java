@@ -1,4 +1,5 @@
-package models;
+package WildFire;
+
 
 public class Files {
 
