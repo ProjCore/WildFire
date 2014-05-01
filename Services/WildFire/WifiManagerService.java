@@ -30,6 +30,7 @@ public class WifiManagerService extends BroadcastReceiver{
 			WifiManagerController wifiManager = null;
 			new ListView(null).setAdapter(new ArrayAdapter<String>(wifiManager.getApplicationContext(),
 			 android.R.layout.simple_list_item_1,wifis));
+			//comment
 
 			
 		}
