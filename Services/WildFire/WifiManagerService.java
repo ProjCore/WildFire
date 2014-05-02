@@ -12,8 +12,6 @@ import android.widget.ListView;
 
 public class WifiManagerService extends BroadcastReceiver{
 
-
-
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			// TODO: This method is called when the BroadcastReceiver is receiving
@@ -27,7 +25,7 @@ public class WifiManagerService extends BroadcastReceiver{
 			    wifis[i] = ((wifiScanList.get(i)).toString());
 			 }
 			
-			WifiManagerController wifiManager = null;
+			WifiActivity wifiManager = null;
 			new ListView(null).setAdapter(new ArrayAdapter<String>(wifiManager.getApplicationContext(),
 			 android.R.layout.simple_list_item_1,wifis));
 			//comment

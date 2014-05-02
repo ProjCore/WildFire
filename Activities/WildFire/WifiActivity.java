@@ -20,10 +20,10 @@ import android.widget.ListView;
 import android.os.Build;
 import android.net.wifi.WifiManager;
 
-public class WifiManagerController extends Activity {
+public class WifiActivity extends Activity {
 
 	   WifiManager mainWifiObj;
-	   WifiManagerService wifiReciever;
+	   WifiManagerService wifiManagerService;
 	   ListView list;
 	   String wifis[];
 	
@@ -40,17 +40,17 @@ public class WifiManagerController extends Activity {
 	      list = (ListView)findViewById(R.id.listView1);
 	      //Context WIFI_SERVICE might be the wrong way to do this
 	      mainWifiObj = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-	      wifiReciever = new WifiManagerService();
+	      wifiManagerService = new WifiManagerService();
 	      mainWifiObj.startScan();
 	}
 	
 	   protected void onPause() {
-		      unregisterReceiver(wifiReciever);
+		      unregisterReceiver(wifiManagerService);
 		      super.onPause();
 		   }
 	   
 	   protected void onResume() {
-		      registerReceiver(wifiReciever, new IntentFilter(
+		      registerReceiver(wifiManagerService, new IntentFilter(
 		      WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
 		      super.onResume();
 		   }

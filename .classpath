@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="Models"/>
 	<classpathentry kind="src" path="Controllers"/>
 	<classpathentry kind="src" path="Services"/>
+	<classpathentry kind="src" path="Activities"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
