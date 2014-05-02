@@ -1,6 +1,4 @@
 package WildFire;
-import com.parse.Parse;
-import com.parse.ParseAnalytics;
 
 class Gps {
 	
