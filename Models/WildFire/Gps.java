@@ -36,6 +36,15 @@ class Gps {
 		float getLongitude() {
 			return longitude;
 		}
+		
+		GeoPoint(){
+			
+		}
+		
+		GeoPoint(float longitude, float latitude){
+			this.longitude =  longitude;
+			this.latitude = latitude;
+		}
 
 		void setLongitude(float longitude) {
 			this.longitude = longitude;

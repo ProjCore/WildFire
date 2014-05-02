@@ -1,12 +1,16 @@
 package WildFire;
 
+import WildFire.Gps.GeoPoint;
+
 class Wifi {
 	
 	String wifi_name;
 	Gps gps = new Gps();
 	Wifi(){
-		Gps.GeoPoint geopoint = gps.getGeo_point();
+		
+		GeoPoint geopoint = gps.new GeoPoint(20, 10);
 		gps.setGeo_point(geopoint);
+		
 	}
 	
 	public String getWifi_name() {
