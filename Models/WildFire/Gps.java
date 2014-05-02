@@ -1,4 +1,6 @@
 package WildFire;
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
 
 class Gps {
 	
@@ -15,8 +17,9 @@ class Gps {
 		return geo_point;
 	}
 
-	void setGeo_point(GeoPoint geo_point) {
-		this.geo_point = geo_point;
+	void setGeo_point(float longitude, float latitude) {
+		this.geo_point.longitude = longitude;
+		this.geo_point.latitude = latitude;
 	}
 
 	float getRange() {

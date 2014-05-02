@@ -1,6 +1,7 @@
 package WildFire;
-
-
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+import com.parse.ParseObject;
 import com.example.wildfire.R;
 import com.example.wildfire.R.id;
 import com.example.wildfire.R.layout;
@@ -24,10 +25,16 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		Parse.initialize(this, "LDvHEhnNfSJnmxxLPVDnhUdWLY7ATaWuLdOdT151", "0BUvOzWv9W68p30uxsqq2aTBPDU5qhPwYEBPOCtJ");
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
+		//just a test for parse. Probably should be moved to a service.
+		ParseObject testObject = new ParseObject("TestObject");
+		testObject.put("foo", "bar");
+		testObject.saveInBackground();
 	}
 
 	@Override

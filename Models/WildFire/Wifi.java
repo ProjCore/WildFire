@@ -6,10 +6,10 @@ class Wifi {
 	
 	String wifi_name;
 	Gps gps = new Gps();
+	
 	Wifi(){
-		
-		GeoPoint geopoint = gps.new GeoPoint(20, 10);
-		gps.setGeo_point(geopoint);
+		Gps.GeoPoint t = gps.new GeoPoint();
+		gps.setGeo_point(10, 20);
 		
 	}
 	
