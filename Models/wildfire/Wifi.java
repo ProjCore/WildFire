@@ -1,6 +1,6 @@
-package WildFire;
+package wildfire;
 
-import WildFire.Gps.GeoPoint;
+import wildfire.Gps.GeoPoint;
 
 class Wifi {
 	

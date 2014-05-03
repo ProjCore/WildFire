@@ -1,4 +1,4 @@
-package WildFire;
+package wildfire;
 
 class File {
 	

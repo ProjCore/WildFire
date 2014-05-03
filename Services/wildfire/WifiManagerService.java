@@ -1,6 +1,7 @@
-package WildFire;
+package wildfire;
 import java.util.List;
 
+import wildfire.WifiActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
