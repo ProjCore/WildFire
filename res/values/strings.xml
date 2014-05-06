@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">WildFire</string>
-    <string name="create_file_label">Fill the form</string>
+	<string name="app_name">WildFire</string>
 	<string name="hello_world">Hello World!</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_wifi_manager">WifiManager</string>
-    <string name="title_activity_create_file_form">CreateFileForm</string>
-    <string name="title_activity_create_file">CreateFile</string>
+	<string name="action_settings">Settings</string>
+	<string name="title_activity_wifi_manager">WifiManager</string>
+	<string name="title_activity_create_file_form">CreateFileForm</string>
+	<string name="title_activity_create_file">CreateFile</string>
+	   
+	<string name="create_file_title">Create a File</string>
+	<string name="file_file_name_label">Enter a File Name</string>
+	<string name="file_owner_label">Enter an Owner Name</string>
+	<string name="create_file_button">Submit a Form</string>
 
 </resources>

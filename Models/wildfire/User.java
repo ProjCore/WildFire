@@ -11,7 +11,7 @@ class User {
 	List<Contact> contact_list;
 	
 	List<File> files;
-	
+		
 	Wifi wifi;
 	
 	Gps gps;

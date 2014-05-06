@@ -4,7 +4,7 @@ class File {
 	
 	String file_name;
 	
-	Byte[] file;
+	byte[] file;
 	
 	Contact owner;
 
@@ -16,11 +16,11 @@ class File {
 		this.file_name = file_name;
 	}
 
-	public Byte[] getFile() {
+	public byte[] getFile() {
 		return file;
 	}
 
-	public void setFile(Byte[] file) {
+	public void setFile(byte[] file) {
 		this.file = file;
 	}
 
